@@ -31,7 +31,8 @@ void setup(){
 void draw() {
   if(video.available()){//キャプチャ映像がある場合
     video.read();//映像読み込み
-    video.filter(THRESHOLD);//必要に応じてぼかしフィルタをつかう（ノイズ除去用）  
+    //video.filter(BLUR,2);必要に応じてぼかしフィルタをつかう（ノイズ除去用）  
+    video.filter(THRESHOLD);//モノクロにする関数  
     set(0,0,video);//映像表示
     
     detection=false;//物体検知のフラグをfalse（検知なし）にしておく
